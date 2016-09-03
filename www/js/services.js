@@ -6,7 +6,7 @@ angular.module('starter.services', [])
   // Some fake testing data
   var chats = [{
     id: 0,
-    name: 'Ben & Jerry Ice cream promotion',
+    name: 'Ben & Jerry promotion',
     lastText: 'You on your way?',
     face: 'img/bnj.jpg',
     msgs:[
@@ -89,8 +89,8 @@ angular.module('starter.services', [])
   // Some fake testing data
   var deals = [{
     id: 0,
-    dealName: 'Ben & Jerry Ice cream promotion',
-    discount: "20%",
+    dealName: 'Ben & Jerry promotion',
+    discount: "20 %",
     origin:"$40.99",
     discounted: "$31.11",
     numNeed: 1,
@@ -100,7 +100,9 @@ angular.module('starter.services', [])
   }, {
     id: 1,
     dealName: 'Fidget Cube discount',
-    discount: "90%",
+    discount: "90 %",
+    origin:"$59.99",
+    discounted: "$19.99",
     numNeed: 1,
     location: 'Somerset 313, Random shop',
     dealPic: 'img/fidget.jpg',
@@ -137,7 +139,9 @@ angular.module('starter.services', [])
        deals.push({
         id: id,
         dealName: dealName,
-        discount: discount.toFixed(0) + "%",
+        discount: discount.toFixed(0) + " %",
+        origin:"$" + oriPrice,
+        discounted: "$" + disPrice,
         numNeed: slot,
         location: loc,
         dealPic: imgURL,

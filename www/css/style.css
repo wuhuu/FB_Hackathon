@@ -27,8 +27,48 @@
 .newDeal input {
 	font-size: 24px;
 }
+
 #numpicker{
 	font-size:20px;
 	text-align: center;
 
+}
+
+.discountBtn {
+	margin-top: -5px;
+	padding-top: 0px;
+}
+
+.chatName {
+	font-style: bold;
+	font-size: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+
+}
+
+.chatMsg {
+	height: 20px;
+	border: 1px solid ;
+	border-radius: 45px;
+	padding-top: 10px;
+	padding-right: 15px;
+	padding-bottom: 30px;
+	padding-left: 15px;
+	margin: 10px 10px 0px 0px;
+}
+
+.chatMsg-right {
+	height: 20px;
+	border: 1px solid ;
+	border-radius: 45px;
+	padding-top: 10px;
+	padding-right: 15px;
+	padding-bottom: 30px;
+	padding-left: 15px;
+	margin: 10px 10px 0px 250px;
+
+}
+.msg .item {
+	border: 0px;
 }

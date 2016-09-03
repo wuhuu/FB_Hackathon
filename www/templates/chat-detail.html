@@ -11,21 +11,38 @@
       </button>
    </ion-nav-buttons>
   <ion-content class="padding" ng-model="track" ng-init="track = msges[0].profileid">
-    <div ng-repeat="msg in msges">
-      <div class="row">
-        <div class="col col-offset-80" ng-if="track!=msg.profileid">
-        <img ng-src="{{profile[msg.profileid].face}}" style="width: 64px; height: 64px;" class="right">
-        <p>
-          {{msg.msg}}
-        </p>
+    <div class="msg" ng-repeat="msg in msges">
+        
+      <div class="row item" ng-if="track==msg.profileid">
+        <div class="item-avatar">
+            <img ng-src="{{profile[msg.profileid].face}}" >
+
         </div>
-        <div ng-if="track==msg.profileid">
-        <img ng-src="{{profile[msg.profileid].face}}" style="width: 64px; height: 64px;" class="right">
-        <p>
+        <div class="chatMsg">
+            {{msg.msg}}
+        </div>
+        
+      </div>
+      
+      <div class="row item" ng-if="track!=msg.profileid">
+
+        <div class="chatMsg-right">
           {{msg.msg}}
-        </p>
+        </div>
+        <div class="item-avatar-right" >
+        <img ng-src="{{profile[msg.profileid].face}}" style="width: 64px; height: 64px;"/>
         </div>
       </div>
+    </div>
+    </div>
+    
+    <div class="bar bar-footer item-input-inset">
+        <label class="item-input-wrapper">
+          <input type="text" >
+        </label>
+        <button class="button button-small">
+          Submit
+        </button>
     </div>
   </ion-content>
 </ion-view>

@@ -3,7 +3,7 @@ angular.module('starter.controllers', [])
 .controller('LoginCtrl', function($scope, $state) {
     $scope.login = function(username, pwd) {
         if(username == "Ben") {
-            $state.go('tab'); 
+            $state.go('tab.deals'); 
         }
         
     }
