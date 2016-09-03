@@ -61,24 +61,29 @@ angular.module('starter.controllers', [])
   $scope.profile = Profile.get("Ben");
 })
 
-.controller('NewDealCtrl', function($scope, $location) {
+.controller('NewDealCtrl', function($scope, $location, Deals) {
+    
     $scope.takePicture = function() {
-        $scope.imgURI = true;
+        $scope.img = true;
+        $scope.imgURL = "img/newDeal.jpg";
+        $scope.dealName = "C-Rest"
+        $scope.oriPrice = "$ 59";
+        $scope.disPrice = "$ 49";
+        $scope.slot = 1;
+        $scope.loc = "City square plaza lvl3 03-42";
     }
+ 
     
     $scope.addDeal = function(dealName, oriPrice, disPrice, slot, loc) {
-        console.log($scope.dealName);
-        console.log(oriPrice);
-        console.log(disPrice);
-        console.log(slot);
-        console.log(loc);
+
+        Deals.newDeal($scope.imgURL, dealName, 59, 49, slot, loc);
         
-        $scope.imgURI = false;
-        this.dealName = "";
-        this.oriPrice = "";
-        this.disPrice = "";
-        this.slot = "";
-        this.loc = "";
+        $scope.img = false;
+        $scope.dealName = "";
+        $scope.oriPrice = "";
+        $scope.disPrice = "";
+        $scope.slot = "";
+        $scope.loc = "";
         $location.path('/tab/deals');
 
 
