@@ -72,3 +72,7 @@
 .msg .item {
 	border: 0px;
 }
+
+.dealDetailsBtn {
+	padding-top: 3px;
+}
