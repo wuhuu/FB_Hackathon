@@ -1,0 +1,15 @@
+<ion-view view-title="Deals">
+  <ion-content >
+      <ion-list>
+        <ion-item class="item item-avatar item-icon-right" ng-repeat="deal in deals" type="item-text-wrap" href="#/tab/deals/{{deal.id}}">
+          <img ng-src="{{deal.dealPic}}">
+          <h2>{{deal.dealName}}</h2>
+          <p>Discount:{{deal.discount}}</p>
+          <p>Slots left:{{deal.numNeed}}</p>
+          <p>Location:{{deal.location}}</p>
+          <i class="icon ion-chevron-right icon-accessory"></i>
+          
+        </ion-item>
+      </ion-list>
+  </ion-content>
+</ion-view>

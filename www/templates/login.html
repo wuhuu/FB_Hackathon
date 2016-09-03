@@ -1,0 +1,23 @@
+<ion-view view-title="Login">
+  <ion-content>
+    <div class="row login-icon">
+        <div class="col col-offset-20 col-60 ">
+            <img src="img/login.png" width="100%"/>
+        </div>
+    </div>
+    
+    <div class="list">
+      <label class="item item-input">
+        <span class="input-label">Username</span>
+        <input type="text" ng-model="username">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Password</span>
+        <input type="password" ng-model="pwd">
+      </label>
+      <button class="button button-block button-positive" ng-click="login(username, pwd)">
+        Login 
+      </button>
+    </div>
+  </ion-content>
+</ion-view>
