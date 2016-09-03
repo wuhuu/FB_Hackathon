@@ -6,13 +6,13 @@
 -->
 <ion-view view-title="{{chat.name}}">
   <ion-nav-buttons side="right">
-      <button class="button button-clear button-dark" ng-click="contact(chat.id)">
+      <button class="button button-clear button-dark" style="color: white"ng-click="contact(chat.id)">
         Contacts
       </button>
    </ion-nav-buttons>
   <ion-content class="padding" ng-model="track" ng-init="track = msges[0].profileid">
     <div class="msg" ng-repeat="msg in msges">
-        
+
       <div class="row item" ng-if="track==msg.profileid">
         <div class="item-avatar">
             <img ng-src="{{profile[msg.profileid].face}}" >
@@ -21,9 +21,9 @@
         <div class="chatMsg">
             {{msg.msg}}
         </div>
-        
+
       </div>
-      
+
       <div class="row item" ng-if="track!=msg.profileid">
 
         <div class="chatMsg-right">
@@ -35,7 +35,7 @@
       </div>
     </div>
     </div>
-    
+
     <div class="bar bar-footer item-input-inset">
         <label class="item-input-wrapper">
           <input type="text" >

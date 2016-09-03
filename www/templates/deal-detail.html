@@ -8,24 +8,23 @@
 <ion-view view-title="{{deal.dealName}}">
   <ion-content class="list-card">
     <div class="item item-image">
-        <img ng-src="{{deal.dealPic}}" style="height:40%;width:auto;">
+        <img ng-src="{{deal.dealPic}}" style="height:40%;width:auto;padding-top: 10px">
     </div>
     <br>
 
     <div class="row">
-      <div class="col col-25">
-        <button class="button button-large" ng-click="minus()">
+      <div class="col col-25" style="text-align: right">
+        <button class="button button-large" style="background-color: white" ng-click="minus()">
           <i class="icon ion-minus-circled"></i>
         </button>
-       
       </div>
       <div class="col col-50">
-        <label class="item item-input">
+        <label class="item item-input"style="margin-top: 5px">
           <input type="text" value="{{num}}" id="numpicker">
         </label>
       </div>
       <div class="col col-25">
-        <button class="button button-large" ng-click="plus()">
+        <button class="button button-large" style="background-color: white" ng-click="plus()">
           <i class="icon ion-plus-circled"></i>
         </button>
       </div>
@@ -35,7 +34,7 @@
     <button ng-click="order({{deal.id}})"  class="button button-full button-balanced">
         GET IT!
     </button>
-    
+
     <div class="list">
         <li class="item">Slots left:  {{deal.numNeed}}</li>
         <li class="item">Time left:  00:30</li>
