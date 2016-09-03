@@ -8,18 +8,40 @@
 <ion-view view-title="{{deal.dealName}}">
   <ion-content class="list-card">
     <div class="item item-image">
-        <img ng-src="{{deal.dealPic}}">
+        <img ng-src="{{deal.dealPic}}" style="height:40%;width:auto;">
+    </div>
+    <br>
+
+    <div class="row">
+      <div class="col col-25">
+        <button class="button button-large" ng-click="plus()">
+          <i class="icon ion-plus-circled"></i>
+        </button>
+      </div>
+      <div class="col col-50">
+        <label class="item item-input">
+          <input type="text" value="{{num}}" id="numpicker">
+        </label>
+      </div>
+      <div class="col col-25">
+      <button class="button button-large" ng-click="minus()">
+        <i class="icon ion-minus-circled"></i>
+      </button>
+      </div>
     </div>
 
-    <button 
-    ng-click="add({{deal.id}})"
-    class="button button-full button-balanced">
-        GET ONE!
+    <br>
+    <button ng-click="order({{deal.id}})"  class="button button-full button-balanced">
+        GET IT!
     </button>
-    <div class="padding">
-        <h3>Discount:{{deal.discount}}</h3>
-        <h3>Slots left:{{deal.numNeed}}</h3>
-        <h3>Location:{{deal.location}}</h3>
+    
+    <div class="list">
+        <li class="item">Slots left:  {{deal.numNeed}}</li>
+        <li class="item">Time left:  00:30</li>
+        <li class="item">Price: <font style="text-decoration: line-through;">{{deal.origin}}</font>&nbsp;
+        <font>{{deal.discounted}}</font>&nbsp;
+          <a class="button button-assertive">{{deal.discount}}% off</a></li>
+        <li class="item">Location:  {{deal.location}}</li>
     </div>
   </ion-content>
 </ion-view>

@@ -51,10 +51,22 @@ angular.module('starter.controllers', [])
 
 .controller('DealDetailCtrl', function($scope, $stateParams,$location, Deals, Chats) {
   $scope.deal = Deals.get($stateParams.dealId);
-  $scope.add = function(dealId) {
-    var chatId = Deals.add(dealId);
-    $location.path('/tab/chats/'+chatId);
+  $scope.num = 1;
+
+  $scope.order = function(dealId) {
+    var chatId = Deals.order(dealId,$scope.num);
+    $location.path('/tab/chats');
   }
+
+  $scope.plus = function(){
+     $scope.num++;
+  }
+
+  $scope.minus = function(){
+    if($scope.num!=1)
+     $scope.num--;
+  }
+
 })
 
 .controller('ProfileCtrl', function($scope, $stateParams, Profile) {
