@@ -94,12 +94,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     })
 
-  .state('tab.new', {
-    url: '/new',
+  .state('tab.newDeal', {
+    url: '/newDeal',
     views: {
-      'tab-new': {
-        templateUrl: 'templates/tab-new.html',
-        controller: 'NewCtrl'
+      'tab-newDeal': {
+        templateUrl: 'templates/tab-newDeal.html',
+        controller: 'NewDealCtrl'
       }
     }
   });

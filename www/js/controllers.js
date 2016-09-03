@@ -47,7 +47,7 @@ angular.module('starter.controllers', [])
   $scope.profile = Profile.get("Ben");
 })
 
-.controller('NewCtrl', function($scope, Deals) {
+.controller('NewDealCtrl', function($scope, Deals) {
   $scope.newDeal = function(deal) {
 
   }
