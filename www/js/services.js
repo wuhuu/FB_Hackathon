@@ -26,9 +26,24 @@ angular.module('starter.services', [])
     members:[0,1]
   }, {
     id: 1,
-    name: 'Max Lynx',
+    name: 'Fidget Cube discount',
     lastText: 'Hey, it\'s me',
-    face: 'img/max.png'
+    face: 'img/fidget.jpg',
+    msgs:[
+      {
+        profileid:1,
+        msg:"are you on the your way?"
+      },
+      {
+        profileid:0,
+        msg:"yes!"
+      },
+      {
+        profileid:0,
+        msg:"alright,cya!"
+      }
+    ],
+    members:[0,1]
   }];
 
   return {
@@ -102,11 +117,11 @@ angular.module('starter.services', [])
     chatId:0
   }, {
     id: 1,
-    dealName: 'Ben & Jerry Ice cream',
-    discount: "20%",
+    dealName: 'Fidget Cube discount',
+    discount: "90%",
     numNeed: 1,
     location: 'Somerset 313, Random shop',
-    dealPic: 'img/ben.png',
+    dealPic: 'img/fidget.jpg',
     chatId:1
   }];
 
