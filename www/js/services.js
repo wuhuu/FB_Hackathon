@@ -6,9 +6,9 @@ angular.module('starter.services', [])
   // Some fake testing data
   var chats = [{
     id: 0,
-    name: 'Ben & Jerry promotion',
+    name: 'C-Rest',
     lastText: 'You on your way?',
-    face: 'img/bnj.jpg',
+    face: 'img/newDeal.jpg',
     msgs:[
       {
         profileid:0,
