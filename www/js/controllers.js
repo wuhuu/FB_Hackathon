@@ -31,7 +31,7 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats, Profile) {
+.controller('ChatDetailCtrl', function($scope, $stateParams,$location, Chats, Profile) {
   $scope.chat = Chats.get($stateParams.chatId);
   $scope.msges = $scope.chat.msgs;
   $scope.profile = [];
@@ -42,6 +42,10 @@ angular.module('starter.controllers', [])
       $scope.profile[key] = object;
     }
   }, this);
+
+  $scope.contact = function(chatId){
+    $location.path('/tab/contact/'+chatId);
+  }
 
 })
 
