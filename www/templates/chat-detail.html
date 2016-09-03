@@ -5,10 +5,27 @@
   The Friends service returns an array of friend data
 -->
 <ion-view view-title="{{chat.name}}">
-  <ion-content class="padding">
-    <img ng-src="{{chat.face}}" style="width: 64px; height: 64px">
-    <p>
-      {{chat.lastText}}
-    </p>
+  <ion-nav-buttons side="right">
+      <button class="button button-clear button-dark" ng-click="contact(chat.id)">
+        Contacts
+      </button>
+   </ion-nav-buttons>
+  <ion-content class="padding" ng-model="track" ng-init="track = msges[0].profileid">
+    <div ng-repeat="msg in msges">
+      <div class="row">
+        <div class="col col-offset-80" ng-if="track!=msg.profileid">
+        <img ng-src="{{profile[msg.profileid].face}}" style="width: 64px; height: 64px;" class="right">
+        <p>
+          {{msg.msg}}
+        </p>
+        </div>
+        <div ng-if="track==msg.profileid">
+        <img ng-src="{{profile[msg.profileid].face}}" style="width: 64px; height: 64px;" class="right">
+        <p>
+          {{msg.msg}}
+        </p>
+        </div>
+      </div>
+    </div>
   </ion-content>
 </ion-view>

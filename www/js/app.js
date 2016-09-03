@@ -92,6 +92,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
           controller: 'ChatDetailCtrl'
         }
       }
+      
     })
 
   .state('tab.newDeal', {
@@ -100,6 +101,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       'tab-newDeal': {
         templateUrl: 'templates/tab-newDeal.html',
         controller: 'NewDealCtrl'
+      }
+    }
+  })
+
+  .state('tab.contact', {
+    url: '/contact/:chatId',
+    views: {
+      'tab-chats': {
+        templateUrl: 'templates/tab-contact.html',
+        controller: 'ContactCtrl'
       }
     }
   });

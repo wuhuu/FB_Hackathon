@@ -31,8 +31,22 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
+.controller('ChatDetailCtrl', function($scope, $stateParams,$location, Chats, Profile) {
   $scope.chat = Chats.get($stateParams.chatId);
+  $scope.msges = $scope.chat.msgs;
+  $scope.profile = [];
+  $scope.msges.forEach(function(element) {
+    if(!(element.profileid in $scope.profile)) {
+      var key = element.profileid;
+      var object = Profile.getUsingId(element.profileid);
+      $scope.profile[key] = object;
+    }
+  }, this);
+
+  $scope.contact = function(chatId){
+    $location.path('/tab/contact/'+chatId);
+  }
+
 })
 
 .controller('DealDetailCtrl', function($scope, $stateParams,$location, Deals, Chats) {
@@ -67,5 +81,15 @@ angular.module('starter.controllers', [])
         this.loc = "";
         $location.path('/tab/deals');
 
-    }
+
+  }
+})
+
+.controller('ContactCtrl', function($scope,$stateParams, Chats,Profile) {  
+  $scope.members = Chats.get($stateParams.chatId).members;
+  $scope.profiles = [];
+  $scope.members.forEach(function(element) {
+    $scope.profiles.push(Profile.getUsingId(element));
+  }, this);
+
 });

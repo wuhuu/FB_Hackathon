@@ -6,29 +6,44 @@ angular.module('starter.services', [])
   // Some fake testing data
   var chats = [{
     id: 0,
-    name: 'Ben Sparrow',
+    name: 'Ben & Jerry Ice cream promotion',
     lastText: 'You on your way?',
-    face: 'img/ben.png'
+    face: 'img/bnj.jpg',
+    msgs:[
+      {
+        profileid:0,
+        msg:"are you on the your way?"
+      },
+      {
+        profileid:1,
+        msg:"yes!"
+      },
+      {
+        profileid:0,
+        msg:"alright,cya!"
+      }
+    ],
+    members:[0,1]
   }, {
     id: 1,
-    name: 'Max Lynx',
+    name: 'Fidget Cube discount',
     lastText: 'Hey, it\'s me',
-    face: 'img/max.png'
-  }, {
-    id: 2,
-    name: 'Adam Bradleyson',
-    lastText: 'I should buy a boat',
-    face: 'img/adam.jpg'
-  }, {
-    id: 3,
-    name: 'Perry Governor',
-    lastText: 'Look at my mukluks!',
-    face: 'img/perry.png'
-  }, {
-    id: 4,
-    name: 'Mike Harrington',
-    lastText: 'This is wicked good ice cream.',
-    face: 'img/mike.png'
+    face: 'img/fidget.jpg',
+    msgs:[
+      {
+        profileid:1,
+        msg:"are you on the your way?"
+      },
+      {
+        profileid:0,
+        msg:"yes!"
+      },
+      {
+        profileid:0,
+        msg:"alright,cya!"
+      }
+    ],
+    members:[0,1]
   }];
 
   return {
@@ -76,6 +91,14 @@ angular.module('starter.services', [])
         }
       }
       return null;
+    },
+    getUsingId: function(id) {
+      for (var i = 0; i < profiles.length; i++) {
+        if (profiles[i].id === id) {
+          return profiles[i];
+        }
+      }
+      return null;
     }
   };
 })
@@ -86,19 +109,19 @@ angular.module('starter.services', [])
   // Some fake testing data
   var deals = [{
     id: 0,
-    dealName: 'Ben & Jerry Ice cream',
+    dealName: 'Ben & Jerry Ice cream promotion',
     discount: "20%",
     numNeed: 1,
     location: 'Somerset 313, Random shop',
-    dealPic: 'img/ben.png',
+    dealPic: 'img/bnj.jpg',
     chatId:0
   }, {
     id: 1,
-    dealName: 'Ben & Jerry Ice cream',
-    discount: "20%",
+    dealName: 'Fidget Cube discount',
+    discount: "90%",
     numNeed: 1,
     location: 'Somerset 313, Random shop',
-    dealPic: 'img/ben.png',
+    dealPic: 'img/fidget.jpg',
     chatId:1
   }];
 
