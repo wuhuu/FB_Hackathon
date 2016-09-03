@@ -32,7 +32,7 @@ angular.module('starter.controllers', [])
 })
 
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats, Profile) {
-  $scope.chat = Chats.get($stateParams.chatId)
+  $scope.chat = Chats.get($stateParams.chatId);
   $scope.msges = $scope.chat.msgs;
   $scope.profile = [];
   $scope.msges.forEach(function(element) {
@@ -61,4 +61,13 @@ angular.module('starter.controllers', [])
   $scope.newDeal = function(deal) {
 
   }
+})
+
+.controller('ContactCtrl', function($scope,$stateParams, Chats,Profile) {  
+  $scope.members = Chats.get($stateParams.chatId).members;
+  $scope.profiles = [];
+  $scope.members.forEach(function(element) {
+    $scope.profiles.push(Profile.getUsingId(element));
+  }, this);
+
 });
