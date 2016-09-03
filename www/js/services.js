@@ -24,26 +24,6 @@ angular.module('starter.services', [])
       }
     ],
     members:[0,1]
-  }, {
-    id: 1,
-    name: 'Fidget Cube discount',
-    lastText: 'Hey, it\'s me',
-    face: 'img/fidget.jpg',
-    msgs:[
-      {
-        profileid:1,
-        msg:"are you on the your way?"
-      },
-      {
-        profileid:0,
-        msg:"yes!"
-      },
-      {
-        profileid:0,
-        msg:"alright,cya!"
-      }
-    ],
-    members:[0,1]
   }];
 
   return {
@@ -111,6 +91,8 @@ angular.module('starter.services', [])
     id: 0,
     dealName: 'Ben & Jerry Ice cream promotion',
     discount: "20%",
+    origin:"$40.99",
+    discounted: "$31.11",
     numNeed: 1,
     location: 'Somerset 313, Random shop',
     dealPic: 'img/bnj.jpg',
@@ -140,10 +122,10 @@ angular.module('starter.services', [])
       }
       return null;
     },
-    add: function(dealId) {
+    order: function(dealId,num) {
       for (var i = 0; i < deals.length; i++) {
         if (deals[i].id === parseInt(dealId)) {
-           deals[i].numNeed -= 1;
+           deals[i].numNeed -= num;
            return deals[i].chatId;
         }
       }
