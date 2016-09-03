@@ -1,10 +1,36 @@
 
 <ion-view view-title="New Deal">
   <ion-content>
-    <ion-list>
-    <ion-toggle  ng-model="settings.enableFriends">
-        Enable Friends
-    </ion-toggle>
-    </ion-list>
+ 
+    <div class="list">
+      <div class="deal-photo-new">
+         <img ng-show="imgURI" ng-src="http://placehold.it/300x200" width="90%">
+         <button ng-show="!imgURI" class="button button-outline button-positive" ng-click="takePicture()">Take Picture</button>
+      </div>
+      <label class="item item-input item-floating-label">        
+       <span class="input-label">Deal Name</span>
+        <input type="text" placeholder="Deal Name" ng-model="dealName" name="dealName">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Original Price</span>
+        <input type="text" placeholder="Original Price" ng-model="oriPrice" name="oriPrice">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Discounted Price</span>
+        <input type="text" placeholder="Discounted Price" ng-model="disPrice" name="disPrice">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Slot Left</span>
+        <input type="number" placeholder="Slot Left" ng-model="slot" name="slot">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Location</span>
+        <input type="text" placeholder="Location" ng-model="loc" name="loc">
+      </label>
+      <button class="button button-full button-positive" ng-click="addDeal(dealName, oriPrice, disPrice, slot, loc)">
+        Post new deal
+      </button>
+    </div>
+    
   </ion-content>
 </ion-view>
