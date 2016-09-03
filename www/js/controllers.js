@@ -47,8 +47,25 @@ angular.module('starter.controllers', [])
   $scope.profile = Profile.get("Ben");
 })
 
-.controller('NewDealCtrl', function($scope, Deals) {
-  $scope.newDeal = function(deal) {
+.controller('NewDealCtrl', function($scope, $location) {
+    $scope.takePicture = function() {
+        $scope.imgURI = true;
+    }
+    
+    $scope.addDeal = function(dealName, oriPrice, disPrice, slot, loc) {
+        console.log($scope.dealName);
+        console.log(oriPrice);
+        console.log(disPrice);
+        console.log(slot);
+        console.log(loc);
+        
+        $scope.imgURI = false;
+        this.dealName = "";
+        this.oriPrice = "";
+        this.disPrice = "";
+        this.slot = "";
+        this.loc = "";
+        $location.path('/tab/deals');
 
-  }
+    }
 });
