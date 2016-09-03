@@ -3,14 +3,16 @@
   <ion-content>
  
     <div class="list">
-      <div class="deal-photo-new">
-         <img ng-show="imgURI" ng-src="http://placehold.it/300x200" width="90%">
-         <button ng-show="!imgURI" class="button button-outline button-positive" ng-click="takePicture()">Take Picture</button>
-      </div>
-      <label class="item item-input item-floating-label">        
-       <span class="input-label">Deal Name</span>
-        <input type="text" placeholder="Deal Name" ng-model="dealName" name="dealName">
-      </label>
+        <div class="row row-center">
+          <div class="deal-photo-new col col-40">
+            <img ng-show="img" ng-src="{{imgURL}}" width="140px">
+            
+            <button ng-show="!img" class="button button-outline button-stable addPhoto" ng-click="takePicture()">Add Picture</button>
+          </div>
+          <div class="col col-offset-10 col-50 newDeal">
+            <input type="text" placeholder="Deal Name" ng-model="dealName" name="dealName">
+          </div>
+        </div>
       <label class="item item-input item-floating-label">
         <span class="input-label">Original Price</span>
         <input type="text" placeholder="Original Price" ng-model="oriPrice" name="oriPrice">

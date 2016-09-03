@@ -18,3 +18,11 @@
 	padding-bottom: 20px;
 	padding-left: 20px;
 }
+
+.addPhoto {
+	padding: 40px 15px 40px 15px;
+}
+
+.newDeal input {
+	font-size: 24px;
+}

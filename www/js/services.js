@@ -149,8 +149,36 @@ angular.module('starter.services', [])
       }
       return null;
     },
-    newDeal: function(Deal) {
-      
+    newDeal: function(imgURL, dealName, oriPrice, disPrice, slot, loc) {
+       var id = deals.length;
+       var discount = ((oriPrice - disPrice)  * 100 )/ oriPrice;
+       deals.push({
+        id: id,
+        dealName: dealName,
+        discount: discount.toFixed(0) + "%",
+        numNeed: slot,
+        location: loc,
+        dealPic: imgURL,
+        chatId: id
+      });
     }
   };
+})
+
+.factory('Camera', function($q) {
+
+   return {
+      getPicture: function(options) {
+         var q = $q.defer();
+
+         navigator.camera.getPicture(function(result) {
+            q.resolve(result);
+         }, function(err) {
+            q.reject(err);
+         }, options);
+
+         return q.promise;
+      }
+   }
+
 });
